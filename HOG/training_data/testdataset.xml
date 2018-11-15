@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<?xml-stylesheet type='text/xsl' href='image_metadata_stylesheet.xsl'?>
+<dataset>
+<name>imglab dataset</name>
+<comment>Created by imglab tool.</comment>
+<images>
+  <image file='/home/machon/przyszly_niedoszly/HOG/training_data/img1.jpeg'>
+    <box top='0' left='-1' width='26' height='27'/>
+  </image>
+  <image file='/home/machon/przyszly_niedoszly/HOG/training_data/img14.jpeg'>
+    <box top='1' left='1' width='25' height='27'/>
+  </image>
+  <image file='/home/machon/przyszly_niedoszly/HOG/training_data/img20.jpeg'>
+    <box top='2' left='1' width='25' height='24'/>
+  </image>
+</images>
+</dataset>
