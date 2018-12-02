@@ -4,7 +4,8 @@ import numpy as np
 # src_points = [[115,406], [883, 389], [5, 1319], [1043, 1289] ]
 src_points = []
 scale = 30
-dst_points = np.array([[0,0], [20 * scale,0], [0,24*scale], [20*scale, 24*scale]])
+dst_points = np.array([[0,0], [20 * scale,0], [0,20*scale], [20*scale, 20*scale]])
+# dst_points = np.array([[0,0], [20 * scale,0], [0,24*scale], [20*scale, 24*scale]])
 
 
 def on_mouse_click(event, x, y, flag, param):
@@ -33,15 +34,16 @@ def perspective_correction(image, src_points, dst_points):
 
     src_points = np.array(src_points)
     h, status = cv.findHomography(src_points, dst_points)
-    dst_image = cv.warpPerspective(image, h, (600, int(600*1.2)) )
+    print h
+    dst_image = cv.warpPerspective(image, h, (600, int(600) ))
+    # dst_image = cv.warpPerspective(image, h, (600, int(600*1.2)) )
     for center in src_points:
         cv.circle(image, tuple(center), 10, (0, 0, 255), 2)
-    print h
     cv.imshow("final", dst_image)
     cv.imshow("marked", image)
     cv.waitKey(0)
-    cv.imwrite("../images/feynman_corrected.jpg", dst_image)
-    cv.imwrite("../images/feynman_marked.jpg", image)
+    cv.imwrite("../images/blecorrected.jpg", dst_image)
+    cv.imwrite("../images/ble_marked.jpg", image)
     exit(0)
 
 
@@ -49,7 +51,7 @@ if __name__ == "__main__":
     
     cv.namedWindow("before_correction")
     cv.setMouseCallback("before_correction", on_mouse_click)
-    image = cv.imread("../images/feynman.jpg", 1)
+    image = cv.imread("../images/board.jpg", 1)
 
     while True:
         cv.imshow("before_correction", image)
