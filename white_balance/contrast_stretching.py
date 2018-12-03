@@ -95,15 +95,15 @@ def stretch_contrast(image):
 if __name__ == "__main__":
 
     #TODO: FIX lena color saturation!!!!
-    image = cv.imread('../images/lena.png', 1)
+    image = cv.imread('../images/dark_room.jpg', 1)
     cv.imshow('lenka', image)
     plot_hist(image)
-    print get_mn_max(image)
-    print get_mn_max_three_percent(image)
+    # print get_mn_max(image)
+    # print get_mn_max_three_percent(image)
     image = stretch_contrast(image)
     plot_hist(image)
     cv.imshow('stretched_lenka', image) 
     cv.waitKey(0)
-    cv.imwrite('../images/contrast_stretched_lenna.jpg', image)
+    # cv.imwrite('../images/contrast_stretched_lenna.jpg', image)
     cv.destroyAllWindows()  
  
