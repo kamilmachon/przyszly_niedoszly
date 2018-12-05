@@ -9,7 +9,7 @@ import dlib
 # faces dataset in the examples/faces directory.  This means you need to supply
 # the path to this faces folder as a command line argument so we will know
 # where it is.
-faces_folder = '/home/machon/przyszly_niedoszly/HOG'
+faces_folder = '/home/machon/przyszly_niedoszly/dlib/tools/imglab'
 
 
 # Now let's do the training.  The train_simple_object_detector() function has a
@@ -32,9 +32,9 @@ options.num_threads = 4
 options.be_verbose = False
 
 
-training_xml_path = os.path.join(faces_folder, "digits.xml")
+training_xml_path = os.path.join(faces_folder, "lena.xml")
 
-testing_xml_path = os.path.join(faces_folder, "digits_test.xml")
+testing_xml_path = os.path.join(faces_folder, "lena_test.xml")
 # This function does the actual training.  It will save the final detector t
 # detector.svm.  The input is an XML file that lists the images in the training
 # dataset and also contains the positions of the face boxes.  To create your
